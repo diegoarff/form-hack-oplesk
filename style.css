@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+	--primary-clr: #474544;
+	--bg-clr: #f2f3eb;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--bg-clr);
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: var(--primary-clr);
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.title {
+	position: relative;
+	margin-bottom: 3.5rem;
+}
+
+.title::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -14px;
+	height: 1.5px;
+	background-color: var(--primary-clr);
+	margin: 0 auto;
+}
+
+.title h1 {
+	position: relative;
+	font-size: 1.7rem;
+	letter-spacing: 5px;
+}
+
+.title h1::before,
+.title h1:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 8px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: var(--primary-clr);
+}
+
+.title h1::before {
+	left: -25px;
+}
+
+.title h1::after {
+	right: -19px;
+}
+
+.underline {
+	font-family: 'Montserrat', Arial, sans-serif;
+
+	background: none;
+	outline: none;
+	border: none;
+	border-bottom: solid 2px var(--primary-clr);
+	color: var(--primary-clr);
+}
+
+.input-container {
+	width: 100%;
+	display: grid;
+	gap: 1rem;
+}
+
+input {
+	padding: 0.7rem 0;
+}
+
+input::placeholder {
+	color: var(--primary-clr);
+}
+
+textarea {
+	font-family: 'Montserrat', Arial, sans-serif;
+	height: 120px;
+
+	padding: 0.6rem 0;
+	resize: none;
+}
+
+textarea::placeholder {
+	color: var(--primary-clr);
+}
+
+button {
+	background: none;
+	outline: none;
+	border: solid 2px var(--primary-clr);
+	color: var(--primary-clr);
+
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	margin-top: 1.5rem;
+	cursor: pointer;
+
+	align-self: start;
+}
+
+form {
+	width: 650px;
+	height: 550px;
+	padding: 1.2rem 2rem;
+	border: 3px solid var(--primary-clr);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-group {
+	display: grid;
+	position: relative;
+}
+
+.form-group:has(input.half) {
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3.5rem;
+}
+
+#estatus {
+	position: relative;
+}
+
+.form-group:nth-child(3)::after {
+	content: '';
+	background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png');
+	background-size: contain;
+	width: 25px;
+	aspect-ratio: 1;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png')  */
